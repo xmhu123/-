@@ -56,7 +56,7 @@
         <canvas id="myCanvas"></canvas>
     </div>
 
-    <audio src="love.mp3" autoplay="autoplay"></audio>
+    <audio loop autoplay id="audio" preload="auto" src="http://fs.w.kugou.com/201903231638/dc40e07673bc3316354defff6724870f/G007/M0A/0B/07/p4YBAFT_hY6AHD-xAEFJd5Rv9kw192.mp3"></audio>
 
 </body>
 <script type="text/javascript">
@@ -93,7 +93,20 @@
         //     ctx.strokeStyle = "red"
         //     addText();
         // }, 6000)
+        audioAutoPlay();
+
     }
+
+
+    function audioAutoPlay() {
+        var audio = document.getElementById('audio');
+        console.dir(audio)
+        // audio.play();
+        document.addEventListener("WeixinJSBridgeReady", function () {
+            audio.play();
+        }, false);
+    }
+
     function renderText(text, x, y) {
 
         // 设置字体
