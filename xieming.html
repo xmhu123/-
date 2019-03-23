@@ -101,7 +101,7 @@
     function audioAutoPlay() {
         var audio = document.getElementById('audio');
         console.dir(audio)
-        // audio.play();
+        audio.play();
         document.addEventListener("WeixinJSBridgeReady", function () {
             audio.play();
         }, false);
